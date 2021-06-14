@@ -1,0 +1,325 @@
+@import './reset.scss';
+@import './bootstrap-grid.scss';
+
+// ------------------------------------------
+// SITE
+// ------------------------------------------
+
+//**** MIXINS ****//
+
+@mixin bg-img {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@mixin link {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+body {
+	font-family: 'Playfair Display', serif;
+	line-height: 1.4;
+	font-size: 14px;
+	font-weight: 400;
+	overflow-x: hidden;
+}
+
+.container {
+	width: 100%;
+	max-width: 1062px;
+	margin: 0 auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+img {
+	height: auto;
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	transition: all .2s linear;
+}
+
+p {
+	margin-bottom: 20px;
+	color:  rgba(98, 98, 98, 255);
+	line-height: 1.6;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 30px;
+	font-weight: 500;
+	color: rgba(51, 51, 51, 255);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+h1 {
+	font-size: 34px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 26px;
+}
+
+h4 {
+	font-size: 22px;
+}
+
+h5 {
+	font-size: 18px
+}
+
+h6 {
+	font-size: 16px;
+}
+
+// ------------------------------------------
+// COLOR SCHEME LIGHT
+// ------------------------------------------
+
+.color-scheme-light {
+	color: #fff;
+
+	h1,h2,h3,h4,h5,h6 {
+		color: #FFF;
+	}
+
+	p, ul {
+		color: rgba(255,255,255,.9);
+	}
+
+	input[type="submit"] {
+		color: #fff;
+	}
+}
+
+//**** BASE INPUT ****//
+
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="url"],
+select {
+	height: 40px;
+	width: 100%;
+	outline: none;
+	border: 2px solid rgba(16, 16, 16, 0.05);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+textarea {
+	width: 100%;
+	padding: 20px;
+	border: 2px solid rgba(16, 16, 16, 0.05);
+	outline: none;
+}
+
+.btn,
+input[type="button"],
+input[type="submit"],
+button {
+	background-color: #fff;
+	border: 2px solid rgba(16, 16, 16, 0.05);
+	border-radius: 0;
+	padding: 10px 20px;
+	outline: 0;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+a {
+	color: orange;
+}
+
+// ------------------------------------------
+// HEADER
+// ------------------------------------------
+
+.nz-main-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.nz-main-header {
+	height: 160px;
+}
+
+.burger-menu {
+	display: none;
+	font-size: 23px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+//**** NAVIGATION ****//
+
+.nz-main-menu {
+	display: flex;
+    justify-content: space-between;
+}
+
+.nz-main-nav {
+	font-size: 14px;
+	text-transform: uppercase;
+	display: flex;
+	margin-right: -15px;
+
+	li {
+		margin-right: 90px;
+
+		a {
+			color: rgba(16, 16, 16, 0.5);
+			padding: 15px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
+.nz-logo {
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.menu-item {
+	transition: all .2s linear;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+// ------------------------------------------
+// BLOG
+// ------------------------------------------
+
+.blog {
+
+	.row {
+
+		.col-lg-6 {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.nz-col-main-category {
+	text-transform: uppercase;
+	color: #d2cec6;
+}
+
+.nz-col-main-title {
+
+	a {
+		color: #626262;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+}
+
+.nz-col-suptitle,
+.nz-col-main-title {
+	width: 100%;
+	max-width: 414px;
+}
+
+.art-img {
+	margin-bottom: 26px;
+}
+
+.nz-col-main-category {
+	margin-bottom: 15px;
+}
+
+.art-img {
+	position: relative;
+}
+
+.art-img {
+
+	> a {
+
+		&::after {
+
+			@include link();
+			z-index: 1;
+		}	
+	}
+
+	&:hover {
+
+		.img-scale {
+
+			img {
+				transform: scale(1.2);
+			}
+		}
+	}
+}
+
+.img-scale {
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		transition: all 0.5s ease;
+	}
+}
+
+
+// ------------------------------------------
+// MEDIA
+// ------------------------------------------
+
+@media (max-width: 990px) {
+
+	//**** HEADER ****//
+
+	.nz-main-nav {
+		display: none;
+	}
+
+	.burger-menu {
+		display: block;
+	}
+}
+
+@media (max-width: 660px) {
+
+	//**** BLOG ****//
+
+	.nz-col-main-title {
+		font-size: 23px;
+	}
+}

@@ -6,7 +6,7 @@
  */
 
 $the_post_id   = get_the_ID();
-$article_terms = wp_get_post_terms( $the_post_id, [ 'category' ] );
+$article_terms = wp_get_post_terms( $the_post_id, [ 'category', 'post_tag' ] );
 
 if ( ! empty( $article_terms ) && ! is_array( $article_terms ) ) {
 	return;
@@ -24,7 +24,13 @@ if ( ! empty( $article_terms ) && ! is_array( $article_terms ) ) {
 	</div>
 	<div class="nz-col-text">
 		<div class="nz-col-main-category">
-			Lifestyle
+			<?php foreach ( $article_terms as $key => $article_term ) : ?>
+				<a href="<?php echo esc_url( get_the_excerpt( $article_term ) ); ?>">
+					<?php
+					echo esc_html( $article_term->name ); 
+					?>
+				</a>
+			<?php endforeach; ?>
 		</div>
 		<h2 class="nz-col-main-title">
 			<a href="<?php the_permalink(); ?>">
@@ -33,9 +39,9 @@ if ( ! empty( $article_terms ) && ! is_array( $article_terms ) ) {
 		</h2>
 		<div class="nz-col-suptitle">
 			<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing 
-			elit, sed do eiusmod tempor incididunt ut labore et dolore 
-			magna aliqua. 
+				<?php
+					nz_the_excerpt( 185 );
+				?>
 			</p>
 		</div>
 	</div>

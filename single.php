@@ -12,9 +12,12 @@ get_header();
 
 <section class="single-blog">
 	<div class="container">
-		<h2 class="">
+		<h2>
 			<?php ( $hide_title !== 'no' ) ? the_title() : ''; ?>
 		</h2>
+		<?php
+			the_post_thumbnail();
+		?>
 		<?php 
 		the_content();
 		?>

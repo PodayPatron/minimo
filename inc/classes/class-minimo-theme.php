@@ -5,16 +5,24 @@
  * @package Minimo
  */
 
-namespace MINIMO_THEME\Inc;
+namespace NZ_MINIMO_THEME\Inc;
 
-use MINIMO_THEME\Inc\Traits\Singleton;
+use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 
-class MINIMO_THEME {
+/**
+ * NZ_MINIMO_THEME.
+ */
+class NZ_MINIMO_THEME {
 	use Singleton;
 
+	/**
+	 * Construct.
+	 */
 	protected function __construct() {
 		Assets::get_instance();
-		Menus::get_instance();
+		Menu::get_instance();
+		PostType::get_instance();
+		MetaBoxes::get_instance();
 
 		$this->setup_hooks();
 	}
@@ -23,7 +31,8 @@ class MINIMO_THEME {
 	 * Actions.
 	 */
 	protected function setup_hooks() {
-		add_action( 'after_setup_theme', array( $this, 'setup_theme' ) );
+		add_action( 'after_setup_theme', array( $this, 'setup_theme' ), 10 );
+		add_action( 'widgets_init', array( $this, 'nz_register_widgets' ), 10 );
 	}
 
 	/**
@@ -33,11 +42,20 @@ class MINIMO_THEME {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'custom-logo' );
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'size', 420, 280, true );
+	}
 
-		global $content_width;
-		if ( ! isset( $content_width ) ) {
-			$content_width = 1240;
-		}
+	/**
+	 * Register widgets.
+	 */
+	public function nz_register_widgets() {
+		register_sidebar(
+			array(
+				'name'         => 'Sidebar',
+				'id'           => 'nz-minimo-sidebar',
+				'description'  => ' ',
+				'before_title' => '<h2>',
+				'after_title'  => '</h2>',
+			)
+		);
 	}
 }

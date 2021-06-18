@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-<section class="blog">
+<section class="nz-blog">
 	<div class="container">
 
 		<div class="row row-bottom">
@@ -24,20 +24,12 @@ get_header();
 				<?php endif; ?>
 			</div>
 			<div class="col-lg-3">
-				<div class="sidebar">
-					<img src="<?php echo MINIMO_DIR_URI; ?>/assets/img/sidebar1.jpg" alt="">
-				</div>
+				<?php dynamic_sidebar( 'nz-minimo-sidebar' ); ?>
 			</div>
 		</div>
 		<div class="pagination">
-			<?php
-			the_posts_pagination(
-				array(
-					'end_size' => 2,
-				)
-			);
-			?>
+			<?php the_posts_pagination( array( 'end_size' => 2 ) ); ?>
 		</div>
 	</div>
 </section>
-
+<?php get_footer(); ?>

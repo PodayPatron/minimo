@@ -5,13 +5,19 @@
  * @package Minino
  */
 
-namespace MINIMO_THEME\Inc;
+namespace NZ_MINIMO_THEME\Inc;
 
-use MINIMO_THEME\Inc\Traits\Singleton;
+use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 
-class Menus {
+/**
+ * Menus
+ */
+class Menu {
 	use Singleton;
 
+	/**
+	 * Construct.
+	 */
 	protected function __construct() {
 		$this->setup_hooks();
 	}
@@ -20,7 +26,7 @@ class Menus {
 	 * Actions.
 	 */
 	protected function setup_hooks() {
-		add_action( 'init', array( $this, 'register_menus' ) );
+		add_action( 'init', array( $this, 'register_menus' ), 10 );
 	}
 
 	/**
@@ -29,10 +35,9 @@ class Menus {
 	public function register_menus() {
 		register_nav_menus(
 			array(
-				'minimo-header-menu' => esc_html__( 'Header Menu', 'Minimo' ),
-				'minimo-footer-menu' => esc_html__( 'Footer Menu', 'Minimo' ),
+				'nz-minimo-header-menu' => esc_html__( 'Header Menu', 'Minimo' ),
+				'nz-minimo-footer-menu' => esc_html__( 'Footer Menu', 'Minimo' ),
 			)
 		);
 	}
-
 }

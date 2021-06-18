@@ -1,16 +1,25 @@
 <?php
 
-namespace MINIMO_THEME\Inc\Traits;
+namespace NZ_MINIMO_THEME\Inc\Traits;
 
 trait Singleton {
+	/**
+	 * Construct.
+	 */
 	public function __construct() {
 
 	}
 
+	/**
+	 * Clone.
+	 */
 	public function __clone() {
 
 	}
 
+	/**
+	 * Get instance.
+	 */
 	final public static function get_instance() {
 		static $instance = array();
 

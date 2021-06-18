@@ -4,9 +4,6 @@
  *
  * @package Minimo
  */
-
-use MINIMO_THEME\Inc\MINIMO_THEME;
-
 ?>
 
 <!DOCTYPE html>
@@ -25,13 +22,9 @@ use MINIMO_THEME\Inc\MINIMO_THEME;
 				<div class="nz-logo">
 					<?php
 					if ( function_exists( 'the_custom_logo' ) ) {
-						$custom_logo_id = get_theme_mod( 'custom_logo' );
-						$logo           = wp_get_attachment_image_src( $custom_logo_id );
+						echo wp_get_attachment_image( get_theme_mod( 'custom_logo' ) );
 					}
 					?>
-					<a href="#">
-						<img src="<?php echo $logo[0]; ?>">
-					</a>
 				</div>
 				<?php
 				wp_nav_menu(

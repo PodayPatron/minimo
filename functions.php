@@ -53,7 +53,7 @@ if ( ! function_exists( 'nz_the_excerpt' ) ) {
 	}
 }
 
-if ( ! function_exists( 'nz_my_comments_style' ) ) {	
+if ( ! function_exists( 'nz_my_comments_style' ) ) {
 	/**
 	 * Comments style.
 	 *
@@ -85,4 +85,32 @@ if ( ! function_exists( 'nz_my_comments_style' ) ) {
 			</div>
 		<?php
 	}
+}
+
+/**
+ * Box html.
+ *
+ * @param  mixed $option array.
+ * @param  mixed $value  value.
+ */
+function nz_box_html( $option, $value ) {
+	?>
+		<label for="<?php echo esc_html( $option['id'] ); ?>"><?php echo esc_html( $option['title'] ); ?></label>
+		<input name="<?php echo $option['name']; ?>" id="<?php echo $option['id']; ?>" class="postbox widefat" type="text" value="<?php echo esc_html__( $value ); ?>">
+	<?php
+}
+
+/**
+ * Button html.
+ *
+ * @param  mixed $option array.
+ */
+function nz_button_html( $option, $value, $text ) {
+	?>
+		<label for="<?php echo esc_html( $option['id'] ); ?>"><?php echo esc_html( $option['title'] ); ?></label>
+		<input type="hidden" value="<?php echo esc_html( $value ); ?>" name="<?php $option['name']; ?>">
+		<button id="<?php $option['id']; ?>" name="<?php $option['name']; ?>">
+			<?php echo $text; ?>
+		</button>
+	<?php
 }

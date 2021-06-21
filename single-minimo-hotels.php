@@ -24,6 +24,12 @@ get_header();
 				<div class="single-page-content">
 					<?php the_content(); ?>
 				</div>
+				<div class="nz_hotel_country">
+					<?php echo get_post_meta( $post->ID, '_custom_box_country', true ); ?>
+				</div>
+				<div class="nz_hotel_address">
+					<?php echo get_post_meta( $post->ID, '_custom_box_address', true ); ?>
+				</div>
 				<div class="nz-hotel-price">
 					<span>Price:</span>
 					<?php echo get_post_meta( get_the_ID(), '_custom_box_value', true ); ?>

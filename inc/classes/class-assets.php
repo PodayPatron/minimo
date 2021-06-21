@@ -27,7 +27,7 @@ class Assets {
 	 */
 	protected function setup_hooks() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_styles' ), 10 );
-		add_action( 'wp_enqueue_scripts', array( $this, 'nz_register_scripts' ), 10 );
+		add_action( 'admin_enqueue_scripts', array( $this, 'nz_register_scripts' ), 10 );
 	}
 
 	/**
@@ -45,6 +45,7 @@ class Assets {
 	 * Register scripts.
 	 */
 	public function nz_register_scripts() {
-		wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'script-js', MINIMO_DIR_URI . '/assets/js/admin-gallery.js', array( 'jquery' ), '1.0', true );
 	}
 }

@@ -2,7 +2,6 @@
 /**
  * Archive minimo hotels.
  */
-$custom_post_type = get_post_meta( $post->ID, 'nz_input_field', true );
 
 get_header();
 ?>
@@ -35,9 +34,15 @@ get_header();
 									<?php nz_the_excerpt( 185 ); ?>
 								</p>
 							</div>
+							<div class="nz_hotel_country">
+								<?php echo get_post_meta( $post->ID, '_custom_box_country', true ); ?>
+							</div>
+							<div class="nz_hotel_address">
+								<?php echo get_post_meta( $post->ID, '_custom_box_address', true ); ?>
+							</div>
 							<div class="nz-hotel-price">
 								<span>Price:</span>
-								<?php echo get_post_meta( get_the_ID(), '_custom_box_value', true ); ?>
+								<?php echo get_post_meta( $post->ID, '_custom_box_price', true ); ?>
 							</div>
 						</div>
 					</div>

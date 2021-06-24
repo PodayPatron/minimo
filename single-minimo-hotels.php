@@ -21,7 +21,7 @@ get_header();
 					<div class="single-page-photo main-carousel">
 						<?php foreach ( $photo_gallery as $single_photo_gallery ) : ?>
 							<div class="carousel-cell">
-								<img src="<?php echo esc_url( wp_get_attachment_url( $single_photo_gallery ) ); ?>" alt="Photo hotel">
+								<img class="nz-slider-img" src="<?php echo esc_url( wp_get_attachment_url( $single_photo_gallery ) ); ?>" alt="Photo hotel">
 							</div>
 						<?php endforeach; ?>
 					</div>

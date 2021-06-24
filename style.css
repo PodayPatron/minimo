@@ -2049,6 +2049,10 @@ a {
   margin-bottom: 40px;
 }
 
+.nz-slider-img {
+  width: 100%;
+}
+
 .nz-main-footer {
   padding-top: 40px;
   padding-bottom: 40px;

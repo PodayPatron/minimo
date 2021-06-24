@@ -12,6 +12,7 @@ https://flickity.metafizzy.co
   overflow: hidden;
   position: relative;
   height: 100%;
+  transition: height 0.2s;
 }
 
 .flickity-slider {
@@ -134,4 +135,12 @@ https://flickity.metafizzy.co
 
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
+}
+
+.carousel-cell {
+  width: 100%;
+}
+
+.carousel.is-fullscreen .carousel-cell {
+  height: 100%;
 }

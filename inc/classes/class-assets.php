@@ -58,8 +58,9 @@ class Assets {
 	 * Register scripts.
 	 */
 	public function register_scripts() {
-		wp_enqueue_script( 'main-js', MINIMO_DIR_URI . '/assets/js/main.js', array(), THEME_VERSION, true );
+		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'flickity-js', MINIMO_DIR_URI . '/assets/lib/flickity.min.js', array(), '2.2', true );
+		wp_enqueue_script( 'main-js', MINIMO_DIR_URI . '/assets/js/main.js', array( 'jquery' ), THEME_VERSION, true );
 	}
 
 	/**

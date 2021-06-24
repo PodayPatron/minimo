@@ -37,7 +37,7 @@ if ( ! function_exists( 'nz_the_excerpt' ) ) {
 	/**
 	 * Get the excerpt.
 	 *
-	 * @param  mixed $trim_character_count Count symbols.
+	 * @param  int $trim_character_count Count symbols.
 	 */
 	function nz_the_excerpt( $trim_character_count = 0 ) {
 		if ( has_excerpt() || 0 === $trim_character_count ) {
@@ -57,9 +57,9 @@ if ( ! function_exists( 'nz_my_comments_style' ) ) {
 	/**
 	 * Comments style.
 	 *
-	 * @param  mixed $comment comments.
-	 * @param  mixed $args values of array.
-	 * @param  mixed $depth  levels of comments.
+	 * @param  string $comment comments.
+	 * @param  array  $args values of array.
+	 * @param  int    $depth  levels of comments.
 	 */
 	function nz_my_comments_style( $comment, $args, $depth ) {
 		?>
@@ -90,27 +90,42 @@ if ( ! function_exists( 'nz_my_comments_style' ) ) {
 /**
  * Box html.
  *
- * @param  mixed $option array.
- * @param  mixed $value  value.
+ * @param  array  $option array.
+ * @param  string $value  value.
  */
 function nz_box_html( $option, $value ) {
 	?>
 		<label for="<?php echo esc_html( $option['id'] ); ?>"><?php echo esc_html( $option['title'] ); ?></label>
-		<input name="<?php echo $option['name']; ?>" id="<?php echo $option['id']; ?>" class="postbox widefat" type="text" value="<?php echo esc_html__( $value ); ?>">
+		<input name="<?php echo esc_html( $option['name'] ); ?>" id="<?php echo esc_html( $option['id'] ); ?>" class="postbox widefat" type="text" value="<?php echo esc_html( $value ); ?>">
 	<?php
 }
+
 
 /**
  * Button html.
  *
- * @param  mixed $option array.
+ * @param  array $args array.
  */
-function nz_button_html( $option, $value, $text ) {
+function nz_button_html( $args ) {
 	?>
-		<label for="<?php echo esc_html( $option['id'] ); ?>"><?php echo esc_html( $option['title'] ); ?></label>
-		<input type="hidden" value="<?php echo esc_html( $value ); ?>" name="<?php $option['name']; ?>">
-		<button id="<?php $option['id']; ?>" name="<?php $option['name']; ?>">
-			<?php echo $text; ?>
-		</button>
+		<div id="gallery-minimo">
+			<label><?php echo esc_html( $args['title'] ); ?></label>
+			<button class="button upload-custom-img">
+				<?php echo esc_html__( 'Add photo', 'minimo' ); ?>
+			</button>
+			<input type="hidden" class="<?php echo esc_html( $args['class'] ); ?>" name="<?php echo esc_html( $args['name'] ); ?>" value="<?php echo esc_html( ( $args['id_images'] ) ? implode( ',', $args['id_images'] ) : '' ); ?>">
+			<div class="custom-img-container">
+				<?php if ( $args['id_images'] ) : ?>
+					<?php foreach ( $args['id_images'] as $id_image ) : ?>
+						<div class="custom-img-gallery" data-id="<?php echo esc_html( $id_image ); ?>">
+							<img class="img-gallery" src="<?php echo esc_url( wp_get_attachment_url( $id_image ) ); ?>" alt="photo hotel">
+							<button class="custom-remove-image">
+								X
+							</button>
+						</div>
+					<?php endforeach; ?>
+				<?php endif; ?>
+			</div>
+		</div>
 	<?php
 }

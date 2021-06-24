@@ -9,7 +9,9 @@
 		<!-- Comments -->
 		<div class="entry-comments mt-20">
 			<div class="heading-lines mb-30">
-				<h3 class="heading small"><?php comments_number(); ?></h3>
+				<h3 class="heading small">
+					<?php esc_html( comments_number() ); ?>
+				</h3>
 			</div>
 
 			<ul class="comment-list">
@@ -36,10 +38,10 @@
 				<div class="row">
 					<?php if ( ! is_user_logged_in() ) : ?>
 						<div class="col-md-4">
-							<input name="author" id="name" type="text" placeholder="Name*">
+							<input name="author" id="name" type="text" placeholder="Name*" aria-label="name">
 						</div>
 						<div class="col-md-4">
-							<input name="email" id="mail" type="email" placeholder="E-mail*">
+							<input name="email" id="mail" type="email" placeholder="E-mail*" aria-label="email">
 						</div>
 					<?php else : ?>
 						<div class="col-12">
@@ -58,7 +60,7 @@
 					</div>
 				</div>
 				<?php comment_id_fields(); ?>
-				<input type="submit" class="btn" value="Leave a comment" id="submit-message">
+				<input type="submit" class="btn" value="Leave a comment" id="submit-message" aria-label="send comment">
 			</form>
 		</div>
 	<?php else : ?>

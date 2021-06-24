@@ -11,7 +11,7 @@ get_header();
 <section class="single-blog">
 	<div class="container">
 		<h2>
-			<?php the_title(); ?>
+			<?php esc_html( the_title() ); ?>
 		</h2>
 
 		<div class="row row-bottom">
@@ -22,7 +22,7 @@ get_header();
 			</div>
 			<div class="col-lg-6">
 				<div class="single-page-content">
-					<?php the_content(); ?>
+					<?php esc_html( the_content() ); ?>
 				</div>
 			</div>
 		</div>

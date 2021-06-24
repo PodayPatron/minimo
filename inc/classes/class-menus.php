@@ -1,6 +1,6 @@
 <?php
 /**
- * Register menus.
+ * Register menu.
  *
  * @package Minino
  */
@@ -10,7 +10,7 @@ namespace NZ_MINIMO_THEME\Inc;
 use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 
 /**
- * Menus
+ * Menu
  */
 class Menu {
 	use Singleton;
@@ -30,13 +30,13 @@ class Menu {
 	}
 
 	/**
-	 * Register menus.
+	 * Register menu.
 	 */
 	public function register_menus() {
 		register_nav_menus(
 			array(
-				'nz-minimo-header-menu' => esc_html__( 'Header Menu', 'Minimo' ),
-				'nz-minimo-footer-menu' => esc_html__( 'Footer Menu', 'Minimo' ),
+				'nz-minimo-header-menu' => esc_html__( 'Header Menu', 'minimo' ),
+				'nz-minimo-footer-menu' => esc_html__( 'Footer Menu', 'minimo' ),
 			)
 		);
 	}

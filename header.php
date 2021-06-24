@@ -30,7 +30,7 @@
 				wp_nav_menu(
 					array(
 						'container'  => false,
-						'menu'       => 'Header Menu',
+						'menu'       => esc_html__( 'Header Menu' ),
 						'menu_class' => 'nz-main-nav',
 					)
 				);

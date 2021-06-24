@@ -11,12 +11,12 @@ get_header();
 	<div class="container">
 		<div class="row row-bottom">
 			<?php if ( have_posts() ) : ?>
+				<?php while ( have_posts() ) : ?>
 					<?php
-					while ( have_posts() ) :
-						the_post();
-						get_template_part( 'template-parts/content' );
-					endwhile;
+					the_post();
+					get_template_part( 'template-parts/content' );
 					?>
+				<?php endwhile; ?>
 			<?php endif; ?>
 		</div>
 		<div class="pagination">
@@ -25,6 +25,6 @@ get_header();
 	</div>
 </section>
 
-<?php 
-get_footer(); 
+<?php
+get_footer();
 ?>

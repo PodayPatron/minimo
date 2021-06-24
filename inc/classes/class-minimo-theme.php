@@ -21,8 +21,8 @@ class NZ_MINIMO_THEME {
 	protected function __construct() {
 		Assets::get_instance();
 		Menu::get_instance();
-		PostType::get_instance();
-		MetaBoxes::get_instance();
+		Post_type::get_instance();
+		Meta_boxes::get_instance();
 
 		$this->setup_hooks();
 	}
@@ -50,9 +50,17 @@ class NZ_MINIMO_THEME {
 	public function nz_register_widgets() {
 		register_sidebar(
 			array(
-				'name'         => 'Sidebar',
+				'name'         => esc_html__( 'Sidebar' ),
 				'id'           => 'nz-minimo-sidebar',
-				'description'  => ' ',
+				'before_title' => '<h2>',
+				'after_title'  => '</h2>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'name'         => esc_html__( 'Sidebar Hotels' ),
+				'id'           => 'nz-minimo-hotels-sidebar',
 				'before_title' => '<h2>',
 				'after_title'  => '</h2>',
 			)

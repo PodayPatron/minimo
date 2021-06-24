@@ -12,7 +12,7 @@ use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 /**
  * Post type.
  */
-class MetaBoxes {
+class Meta_boxes {
 	use Singleton;
 
 	/**
@@ -27,7 +27,6 @@ class MetaBoxes {
 	 */
 	protected function setup_hooks() {
 		add_action( 'add_meta_boxes', array( $this, 'nz_custom_meta_box' ), 10 );
-
 		add_action( 'save_post', array( $this, 'nz_save_data' ), 10 );
 	}
 
@@ -46,15 +45,12 @@ class MetaBoxes {
 
 	/**
 	 * Custom box html.
-	 *
-	 * @param  mixed $post
 	 */
-	public function nz_custom_box_html( $post ) {
-		$price               = get_post_meta( $post->ID, '_custom_box_price', true );
-		$address             = get_post_meta( $post->ID, '_custom_box_address', true );
-		$country             = get_post_meta( $post->ID, '_custom_box_country', true );
-		$gallery             = get_post_meta( $post->ID, '_custom_box_gallery', true );
-		$gallery_text_button = 'Add Photo';
+	public function nz_custom_box_html() {
+		$price     = get_post_meta( get_the_ID(), '_custom_box_price', true );
+		$address   = get_post_meta( get_the_ID(), '_custom_box_address', true );
+		$country   = get_post_meta( get_the_ID(), '_custom_box_country', true );
+		$id_images = get_post_meta( get_the_ID(), '_custom_box_gallery', true );
 
 		wp_nonce_field( 'custom_box', '_custom_box_id' );
 
@@ -62,7 +58,7 @@ class MetaBoxes {
 			array(
 				'name'  => 'nz_input_price',
 				'id'    => 'nz_input_price',
-				'title' => 'Price:',
+				'title' => esc_html__( 'Price:' ),
 			),
 			$price
 		);
@@ -71,7 +67,7 @@ class MetaBoxes {
 			array(
 				'name'  => 'nz_input_address',
 				'id'    => 'nz_input_address',
-				'title' => 'Address:',
+				'title' => esc_html__( 'Address:' ),
 			),
 			$address
 		);
@@ -80,49 +76,59 @@ class MetaBoxes {
 			array(
 				'name'  => 'nz_input_country',
 				'id'    => 'nz_input_country',
-				'title' => 'Country:',
+				'title' => esc_html__( 'Country:' ),
 			),
 			$country
 		);
 
 		nz_button_html(
 			array(
-				'name'  => 'nz_button_gallery',
-				'id'    => 'nz_button_gallery',
-				'title' => 'Gallery:',
-			),
-			$gallery,
-			$gallery_text_button
+				'name'      => 'nz_button_gallery',
+				'id'        => 'nz_button_gallery',
+				'title'     => esc_html__( 'Gallery:' ),
+				'id_images' => $id_images,
+				'class'     => 'custom-img-id',
+			)
 		);
 	}
 
 	/**
 	 * Save data.
 	 *
-	 * @param  mixed $post_id post id.
+	 * @param  int $post_id post get id.
 	 */
 	public function nz_save_data( $post_id ) {
 		if ( isset( $_POST['nz_input_price'] ) ) {
 			update_post_meta(
 				$post_id,
 				'_custom_box_price',
-				$_POST['nz_input_price']
+				esc_html( $_POST['nz_input_price'] )
 			);
 		}
 
-		if ( array_key_exists( 'nz_input_address', $_POST ) ) {
+		if ( isset( $_POST['nz_input_address'] ) ) {
 			update_post_meta(
 				$post_id,
 				'_custom_box_address',
-				$_POST['nz_input_address']
+				esc_html( $_POST['nz_input_address'] )
 			);
 		}
 
-		if ( array_key_exists( 'nz_input_country', $_POST ) ) {
+		if ( isset( $_POST['nz_input_country'] ) ) {
 			update_post_meta(
 				$post_id,
 				'_custom_box_country',
-				$_POST['nz_input_country']
+				esc_html( $_POST['nz_input_country'] )
+			);
+		}
+
+		if ( isset( $_POST['nz_button_gallery'] ) ) {
+			$id_photos = explode( ',', esc_html( wp_unslash( $_POST['nz_button_gallery'] ) ) );
+
+			update_post_meta(
+				$post_id,
+				'_custom_box_gallery',
+				$id_photos
 			);
 		}
 	}

@@ -1,0 +1,22 @@
+.custom-img-container {
+	margin-top: 20px;
+}
+
+.custom-img-gallery {
+	position: relative;
+	margin-bottom: 25px;
+}
+
+.custom-remove-image {
+	position: absolute;
+	right: -5px;
+	top: -5px;
+	background-color: rgb(241, 35, 35);
+	color: #fff;
+	border-color: rgb(241, 35, 35);
+	cursor: pointer;
+}
+
+.custom-img-gallery img {
+	width: 100%;
+}

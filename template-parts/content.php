@@ -2,7 +2,7 @@
 /**
  * Content template.
  *
- * @package Merac
+ * @package Minimo
  */
 
 $the_post_id   = get_the_ID();
@@ -15,7 +15,7 @@ if ( ! empty( $article_terms ) && ! is_array( $article_terms ) ) {
 
 <div class="col-lg-6">
 	<div class="nz-post-img">
-		<a href="<?php the_permalink(); ?>"></a>
+		<a href="<?php esc_url( the_permalink() ); ?>"></a>
 		<div class="nz-img-scale">
 			<?php the_post_thumbnail(); ?>
 		</div>
@@ -31,13 +31,13 @@ if ( ! empty( $article_terms ) && ! is_array( $article_terms ) ) {
 			<?php endforeach; ?>
 		</div>
 		<h2 class="nz-post-title">
-			<a href="<?php the_permalink(); ?>">
-				<?php the_title(); ?>
+			<a href="<?php esc_url( the_permalink() ); ?>">
+				<?php esc_html( the_title() ); ?>
 			</a>
 		</h2>
 		<div class="nz-post-subtitle">
 			<p>
-				<?php nz_the_excerpt( 185 ); ?>
+				<?php esc_html( nz_the_excerpt( 185 ) ); ?>
 			</p>
 		</div>
 	</div>

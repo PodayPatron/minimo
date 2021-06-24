@@ -12,7 +12,7 @@ use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 /**
  * Post type.
  */
-class PostType {
+class Post_type {
 	use Singleton;
 
 	/**
@@ -35,14 +35,14 @@ class PostType {
 	 */
 	public function nz_create_post_type() {
 		$labels = array(
-			'name'          => 'Hotels',
-			'singular_name' => 'Hotel', // админ панель Добавить->Функцию
-			'menu_name'     => 'Hotels', // ссылка в меню в админке
+			'name'          => esc_html__( 'Hotels' ),
+			'singular_name' => esc_html__( 'Hotel' ),
+			'menu_name'     => esc_html__( 'Hotels' ),
 		);
 		$args   = array(
 			'labels'        => $labels,
-			'public'        => true, // благодаря этому некоторые параметры можно пропустить
-			'menu_icon'     => 'dashicons-admin-multisite', // иконка корзины
+			'public'        => true,
+			'menu_icon'     => 'dashicons-admin-multisite',
 			'menu_position' => 5,
 			'has_archive'   => true,
 			'supports'      => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments' ),
@@ -60,20 +60,20 @@ class PostType {
 			'hotel-categories',
 			'minimo-hotels',
 			array(
-				'label'             => 'Categories',
+				'label'             => esc_html__( 'Categories' ),
 				'labels'            => array(
-					'name'              => 'Categories',
-					'singular_name'     => 'Category',
-					'search_items'      => 'Search Category',
-					'all_items'         => 'All Categories',
-					'view_item '        => 'View Categories',
-					'parent_item'       => 'Parent Category',
-					'parent_item_colon' => 'Parent Category:',
-					'edit_item'         => 'Edit Category',
-					'update_item'       => 'Update Category',
-					'add_new_item'      => 'Add New Category',
-					'new_item_name'     => 'New Category Name',
-					'menu_name'         => 'Category',
+					'name'              => esc_html__( 'Categories' ),
+					'singular_name'     => esc_html__( 'Category' ),
+					'search_items'      => esc_html__( 'Search Category' ),
+					'all_items'         => esc_html__( 'All Categories' ),
+					'view_item '        => esc_html__( 'View Categories' ),
+					'parent_item'       => esc_html__( 'Parent Category' ),
+					'parent_item_colon' => esc_html__( 'Parent Category:' ),
+					'edit_item'         => esc_html__( 'Edit Category' ),
+					'update_item'       => esc_html__( 'Update Category' ),
+					'add_new_item'      => esc_html__( 'Add New Category' ),
+					'new_item_name'     => esc_html__( 'New Category Name' ),
+					'menu_name'         => esc_html__( 'Category' ),
 				),
 				'public'            => true,
 				'rewrite'           => array(

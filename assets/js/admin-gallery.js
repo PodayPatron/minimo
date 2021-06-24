@@ -46,7 +46,7 @@
 										`<div class="custom-img-gallery" data-id="${attachment[i]['id']}">
 											<img src="${attachment[i]['url']}" alt="photo hotel">
 											<button class="custom-remove-image">
-												<i class="fas fa-times"></i>
+												x
 											</button>
 										</div>`
 									);
@@ -62,5 +62,20 @@
 		)
 	}
 
+	function nzRemovePhoto() {
+		$( document ).on( 'click', '.custom-remove-image', function( event ) {
+			event.preventDefault();
+
+			let $this       = $(this);
+			let $id_photo   = $this.parent().data( 'id' );
+			let $input      = $this.parents( '#gallery-minimo' ).find( '.custom-img-id' );
+			let $inputValue = $input.val().split( ',' );
+			$inputValue.splice( $.inArray( $id_photo, $inputValue ) ,1 );
+			$input.val( $inputValue.join() );
+			$this.parent().slideUp();
+		});
+	}
+
 	nzAddGallery();
+	nzRemovePhoto();
 })( jQuery );

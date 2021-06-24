@@ -24,7 +24,7 @@
 				?>
 
 			</ul>
-		</div> <!--  end comments -->
+		</div>
 	<?php endif; ?>
 
 	<?php if ( comments_open() ) : ?>

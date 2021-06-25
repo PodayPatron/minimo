@@ -39,7 +39,7 @@ class Meta_boxes {
 			'Custom Settings',
 			array( $this, 'nz_custom_box_html' ),
 			'minimo-hotels',
-			'normal',
+			'normal'
 		);
 	}
 

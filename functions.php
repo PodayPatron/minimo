@@ -23,6 +23,7 @@ require_once MINIMO_DIR_PATH . '/inc/classes/class-post-type.php';
 require_once MINIMO_DIR_PATH . '/inc/classes/class-meta-boxes.php';
 require_once MINIMO_DIR_PATH . '/inc/widgets/class-wph-widget.php';
 require_once MINIMO_DIR_PATH . '/inc/widgets/class-widgets.php';
+require_once MINIMO_DIR_PATH . '/inc/Shortcodes/class-shortcodes.php';
 
 
 if ( ! function_exists( 'nz_get_instance_theme' ) ) {

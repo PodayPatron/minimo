@@ -10,9 +10,9 @@ namespace NZ_MINIMO_THEME\Inc;
 use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 
 /**
- * Post type.
+ * Meta Boxes.
  */
-class Meta_boxes {
+class Meta_Boxes {
 	use Singleton;
 
 	/**

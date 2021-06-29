@@ -11,7 +11,7 @@ use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 use NZ_MINIMO_THEME\Inc\widgets\Hotel_Widget;
 
 /**
- * NZ_MINIMO_THEME.
+ * NZ MINIMO THEME.
  */
 class NZ_MINIMO_THEME {
 	use Singleton;
@@ -23,9 +23,10 @@ class NZ_MINIMO_THEME {
 		Assets::get_instance();
 		Menu::get_instance();
 		Post_type::get_instance();
-		Meta_boxes::get_instance();
+		Meta_Boxes::get_instance();
 		WPH_Widget::get_instance();
 		Widgets::get_instance();
+		Shortcodes::get_instance();
 
 		$this->setup_hooks();
 	}

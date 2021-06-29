@@ -5,7 +5,6 @@
 			cellAlign: 'left',
 			fullscreen: true,
 			lazyLoad: 1,
-			adaptiveHeight: true,
 		});
 	}
 

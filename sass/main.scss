@@ -231,7 +231,7 @@ a {
 
 	.inner-row {
 
-		.col-lg-6 {
+		div[class^=col-]  {
 			margin-bottom: 30px;
 		}
 	}
@@ -580,7 +580,6 @@ a {
 .nz-slider-img {
 	width: 100%;
 }
-
 // ------------------------------------------
 // CUSTOM HOTEL SIDEBAR
 // ------------------------------------------
@@ -635,6 +634,10 @@ a {
 	margin-bottom: 80px;
 }
 
+.minimo-hotels-element {
+	margin-bottom: 80px;
+}
+
 // ------------------------------------------
 // HOTEL
 // ------------------------------------------
@@ -643,7 +646,7 @@ a {
 
 	.row {
 
-		.col-lg-6 {
+		div[class^=col-] {
 			margin-bottom: 60px;
 		}
 	}

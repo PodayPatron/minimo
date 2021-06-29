@@ -57,5 +57,4 @@ class Gallery {
 
 		return ob_get_clean();
 	}
-
 }

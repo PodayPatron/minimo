@@ -24,6 +24,7 @@ require_once MINIMO_DIR_PATH . '/inc/classes/class-meta-boxes.php';
 require_once MINIMO_DIR_PATH . '/inc/widgets/class-wph-widget.php';
 require_once MINIMO_DIR_PATH . '/inc/widgets/class-widgets.php';
 require_once MINIMO_DIR_PATH . '/inc/Shortcodes/class-shortcodes.php';
+require_once MINIMO_DIR_PATH . '/inc/posttypes/class-post-types.php';
 
 if ( ! function_exists( 'nz_get_instance_theme' ) ) {
 	/**
@@ -131,15 +132,4 @@ function nz_button_html( $args ) {
 			</div>
 		</div>
 	<?php
-}
-
-/**
- * Ar.
- *
- * @param array $el el.
- */
-function ar( $el ) {
-	echo '<pre>';
-	print_r( $el );
-	echo '</pre>';
 }

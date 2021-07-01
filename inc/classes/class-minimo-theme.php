@@ -8,7 +8,6 @@
 namespace NZ_MINIMO_THEME\Inc;
 
 use NZ_MINIMO_THEME\Inc\Traits\Singleton;
-use NZ_MINIMO_THEME\Inc\widgets\Hotel_Widget;
 
 /**
  * NZ MINIMO THEME.
@@ -27,6 +26,7 @@ class NZ_MINIMO_THEME {
 		WPH_Widget::get_instance();
 		Widgets::get_instance();
 		Shortcodes::get_instance();
+		Post_Types::get_instance();
 
 		$this->setup_hooks();
 	}

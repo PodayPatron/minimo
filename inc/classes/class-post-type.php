@@ -62,7 +62,7 @@ class Post_type {
 			array(
 				'label'             => esc_html__( 'Categories' ),
 				'labels'            => array(
-					'name'              => esc_html__( 'Categories' ),
+					'name'              => esc_html__( 'Hotels Categories' ),
 					'singular_name'     => esc_html__( 'Category' ),
 					'search_items'      => esc_html__( 'Search Category' ),
 					'all_items'         => esc_html__( 'All Categories' ),

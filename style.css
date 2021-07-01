@@ -1735,7 +1735,8 @@ textarea {
 input[type=button],
 input[type=submit],
 button {
-  background-color: #fff;
+  color: #333333;
+  background-color: #f3eeee;
   border: 2px solid rgba(16, 16, 16, 0.05);
   border-radius: 0;
   padding: 10px 20px;
@@ -1777,6 +1778,7 @@ a {
   display: flex;
   margin-right: -15px;
   margin-bottom: 0;
+  flex-wrap: wrap;
 }
 .nz-main-nav li {
   margin-right: 90px;
@@ -1803,7 +1805,25 @@ a {
   opacity: 0.5;
 }
 
-.nz-blog .inner-row .col-lg-6 {
+.default:hover {
+  color: #fff;
+  background-color: #5a5454;
+}
+
+.accent {
+  border: 3px solid #874848;
+  border-radius: 3px;
+}
+.accent:hover {
+  color: #fff;
+  background-color: #874848;
+}
+
+.main-carousel {
+  min-height: 500px;
+}
+
+.nz-blog .inner-row div[class^=col-] {
   margin-bottom: 30px;
 }
 
@@ -2089,7 +2109,11 @@ a {
   margin-bottom: 80px;
 }
 
-.nz-hotel-page .row .col-lg-6 {
+.minimo-hotels-element {
+  margin-bottom: 80px;
+}
+
+.nz-hotel-page .row div[class^=col-] {
   margin-bottom: 60px;
 }
 

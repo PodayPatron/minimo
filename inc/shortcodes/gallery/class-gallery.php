@@ -5,9 +5,9 @@
  * @package Minimo
  */
 
-namespace NZ_MINIMO_THEME\Inc\Shortcodes\Gallery;
+namespace NZ_MINIMO_THEME\Inc\shortcodes\Gallery;
 
-use NZ_MINIMO_THEME\Inc\Shortcodes;
+use NZ_MINIMO_THEME\Inc\shortcodes;
 use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 
 /**
@@ -39,19 +39,12 @@ class Gallery {
 			$atts
 		);
 
-		$class_wrapper    = 'carousel-wrapper';
-		$class_item       = ' carousel-cell';
-		$class_additional = 'carousel-main';
-
 		ob_start();
 		Shortcodes::get_view_shortcode(
 			'gallery',
 			array(
-				'gallery'          => explode( ', ', $atts['images'] ),
-				'img_size'         => $atts['image_size'],
-				'class_wrapper'    => $class_wrapper,
-				'class_item'       => $class_item,
-				'class_additional' => $class_additional,
+				'gallery'  => explode( ', ', $atts['images'] ),
+				'img_size' => $atts['image_size'],
 			)
 		);
 

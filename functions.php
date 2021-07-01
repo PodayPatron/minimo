@@ -25,7 +25,6 @@ require_once MINIMO_DIR_PATH . '/inc/widgets/class-wph-widget.php';
 require_once MINIMO_DIR_PATH . '/inc/widgets/class-widgets.php';
 require_once MINIMO_DIR_PATH . '/inc/Shortcodes/class-shortcodes.php';
 
-
 if ( ! function_exists( 'nz_get_instance_theme' ) ) {
 	/**
 	 * Get instance theme.
@@ -132,4 +131,15 @@ function nz_button_html( $args ) {
 			</div>
 		</div>
 	<?php
+}
+
+/**
+ * Ar.
+ *
+ * @param array $el el.
+ */
+function ar( $el ) {
+	echo '<pre>';
+	print_r( $el );
+	echo '</pre>';
 }

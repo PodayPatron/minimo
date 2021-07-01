@@ -5,9 +5,9 @@
  * @package Minimo
  */
 
-namespace NZ_MINIMO_THEME\Inc\Shortcodes\Hotel;
+namespace NZ_MINIMO_THEME\Inc\shortcodes\Hotel;
 
-use NZ_MINIMO_THEME\Inc\Shortcodes;
+use NZ_MINIMO_THEME\Inc\shortcodes;
 use NZ_MINIMO_THEME\Inc\Traits\Singleton;
 use WP_Query;
 

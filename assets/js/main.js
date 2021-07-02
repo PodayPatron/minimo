@@ -1,7 +1,7 @@
 (function($) {
 
 	function nzSliderFlickity() {
-		$('.main-carousel').flickity({
+		$( '.main-carousel' ).flickity({
 			cellAlign: 'left',
 			fullscreen: true,
 			lazyLoad: 1,

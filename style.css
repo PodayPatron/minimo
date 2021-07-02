@@ -1693,6 +1693,10 @@ h6 {
   font-size: 16px;
 }
 
+strong {
+  font-weight: 900;
+}
+
 .color-scheme-light {
   color: #fff;
 }
@@ -1881,6 +1885,7 @@ a {
 
 .nz-img-scale {
   overflow: hidden;
+  height: 210px;
 }
 .nz-img-scale img {
   width: 100%;
@@ -2075,6 +2080,128 @@ a {
 
 .custom-category-link a {
   font-size: 16px;
+}
+
+.courses-card {
+  min-height: 400px;
+  border: 1px solid #E5E5E5;
+}
+
+.nz-post-title-courses {
+  text-align: center;
+}
+.nz-post-title-courses a {
+  padding: 8px;
+}
+.nz-post-title-courses a:hover {
+  color: #FFB606;
+}
+.nz-post-title-courses:last-child {
+  margin-bottom: 15px;
+}
+
+.nz-line {
+  width: 100%;
+  height: 2px;
+  background-color: #E5E5E5;
+  max-width: 300px;
+  margin: 5px auto;
+}
+.nz-line:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5px;
+  width: 40px;
+  background-color: #FFB606;
+  border-radius: 7px;
+}
+
+.nz-courses-level-price {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+.nz-courses-level-price span {
+  padding: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.nz-courses-level-price span:hover {
+  text-decoration: underline;
+}
+
+.nz-single-category {
+  font-size: 52px;
+  text-transform: uppercase;
+  border-left: 6px solid #FFB606;
+  margin-bottom: 70px;
+  padding-left: 15px;
+}
+
+.nz-single-courses-title {
+  font-weight: 700;
+}
+
+.nz-single-courses-img {
+  margin-bottom: 30px;
+}
+.nz-single-courses-img img {
+  width: 100%;
+}
+
+#tabs-course {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/*Head area*/
+#tabs-course .nz-tabs-head {
+  display: inline-block;
+  width: 100%;
+}
+
+#tabs-course .nz-tabs-head ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nz-tabs-menu {
+  display: flex;
+}
+.nz-tabs-menu li {
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+.nz-tabs-menu li a {
+  display: inline-block;
+  padding: 14px 16px;
+  font-size: 17px;
+  color: #000;
+}
+
+#tabs-course li:hover {
+  background-color: #FFFFFF;
+}
+
+#tabs-course li.active {
+  background-color: #FFFFFF;
+}
+
+#tabs-course .nz-tabs-content > div {
+  display: none;
+  padding: 6px 12px;
+  color: #000;
+}
+
+#tabs-course .nz-tabs-content > div.active {
+  display: block;
+  background-color: #fff;
 }
 
 .nz-main-footer {

@@ -9,6 +9,7 @@ namespace NZ_MINIMO_THEME\Inc;
 
 use NZ_MINIMO_THEME\Inc\shortcodes\Hotel\Hotel;
 use NZ_MINIMO_THEME\Inc\shortcodes\gallery\Gallery;
+use NZ_MINIMO_THEME\Inc\shortcodes\Tabs\Tabs;
 use NZ_MINIMO_THEME\Inc\shortcodes\title\Title;
 use NZ_MINIMO_THEME\Inc\shortcodes\button\Button;
 use NZ_MINIMO_THEME\Inc\shortcodes\column\Column;
@@ -41,6 +42,7 @@ class Shortcodes {
 		require MINIMO_DIR_PATH . '/inc/shortcodes/column/class-column.php';
 		require MINIMO_DIR_PATH . '/inc/shortcodes/row/class-row.php';
 		require MINIMO_DIR_PATH . '/inc/shortcodes/carousel/class-carousel.php';
+		require MINIMO_DIR_PATH . '/inc/shortcodes/tabs/class-tabs.php';
 	}
 
 	/**
@@ -54,6 +56,8 @@ class Shortcodes {
 		Column::get_instance();
 		Row::get_instance();
 		Carousel::get_instance();
+		Tabs::get_instance();
+
 
 	}
 
